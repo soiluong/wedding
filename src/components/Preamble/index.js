@@ -1,31 +1,30 @@
-import React from "react"
-import styled from "styled-components/macro"
-import { ThemeProvider, css } from "styled-components"
-import Img from "gatsby-image"
-import { graphql, useStaticQuery } from "gatsby"
+import React from 'react';
+import styled, { ThemeProvider, css } from 'styled-components/macro';
+import Img from 'gatsby-image';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 
-import { media } from "../styles/vars"
-import venueBg from "../../static/preamble-venue.jpg"
+import { media } from 'styles/vars';
+import venueBg from '../../../static/preamble-venue.jpg';
 
 const smallTitleStyle = css`
-  color: #9b9b9b;
+  color: var(--color-gray);
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 20px;
   text-transform: uppercase;
-`
+`;
 
 const smallBodyStyle = css`
   color: #333333;
   font-size: 20px;
   margin-bottom: 20px;
   text-align: center;
-  
+
   ${media.small`
     font-size: 18px;
     margin-bottom: 0;
   `};
-`
+`;
 
 const Section = styled.section`
   display: flex;
@@ -33,14 +32,14 @@ const Section = styled.section`
   ${media.medium`
     flex-wrap: wrap;
   `};
-`
+`;
 
 const BigBox = styled.div`
   position: relative;
   width: 100%;
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     padding-bottom: 100%;
   }
@@ -70,7 +69,7 @@ const BigBox = styled.div`
       padding-bottom: 50%;
     }
   `};
-`
+`;
 
 const BigBoxImage = styled.div`
   background: url(${venueBg});
@@ -81,12 +80,12 @@ const BigBoxImage = styled.div`
   position: absolute;
   width: 100%;
   z-index: -1;
-  
+
   ${media.medium`
     right: 0;
     width: 50%;
   `};
-`
+`;
 
 const Title = styled.p`
   color: var(--color-white);
@@ -95,30 +94,30 @@ const Title = styled.p`
   margin-bottom: 0;
 
   ${({ theme: { inverted } }) => inverted && smallTitleStyle};
-  
+
   ${media.small`
     font-size: 14px;
   `};
-`
+`;
 
 const Date = styled.p`
   color: var(--color-white);
   display: block;
-  font-family: "Lobster", cursive;
+  font-family: 'Lobster', cursive;
   font-size: 68px;
   margin: 20px 0;
 
   ${({ theme: { inverted } }) => inverted && smallTitleStyle};
-  
+
   ${media.medium`
     font-size: 48px;
     margin: 10px 0;
   `};
-  
+
   ${media.small`
     font-size: 32px;
   `};
-`
+`;
 
 const Content = styled.div`
   align-items: center;
@@ -130,11 +129,11 @@ const Content = styled.div`
   position: absolute;
   text-align: center;
   width: 100%;
-  
+
   ${media.medium`
     padding: 20px;
   `};
-`
+`;
 
 const SmallContent = styled.div`
   align-items: center;
@@ -142,7 +141,7 @@ const SmallContent = styled.div`
   height: 100%;
   position: absolute;
   width: 100%;
-`
+`;
 
 const LeftContent = styled.div`
   align-items: center;
@@ -151,20 +150,24 @@ const LeftContent = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 20px;
-`
+
+  ${media.small`
+    padding: 15px;
+  `};
+`;
 
 const SmallContentTitle = styled.span`
   ${smallTitleStyle};
-`
+`;
 
 const SmallContentBody = styled.p`
   ${smallBodyStyle};
-`
+`;
 
 const RightImage = styled.div`
   flex: 1 1 50%;
   width: 100%;
-`
+`;
 
 const Paragraph = styled.p`
   color: var(--color-white);
@@ -172,7 +175,7 @@ const Paragraph = styled.p`
   margin-bottom: 0;
 
   ${({ theme: { inverted } }) => inverted && smallBodyStyle};
-`
+`;
 
 const SmallBox = styled.div`
   background: var(--color-white);
@@ -180,11 +183,11 @@ const SmallBox = styled.div`
   width: 100%;
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     padding-bottom: 50%;
   }
-`
+`;
 
 const BigBoxImgContent = styled.div`
   align-items: center;
@@ -199,12 +202,12 @@ const BigBoxImgContent = styled.div`
   position: absolute;
   text-align: center;
   width: 50%;
-  
+
   ${media.medium`
     height: 100%;
     width: 50%;
   `};
-`
+`;
 
 const Column = styled.div`
   flex: 1 1 50%;
@@ -238,7 +241,13 @@ const Column = styled.div`
       }
     `};
   `};
-`
+`;
+
+const LinkStyled = styled(Link)`
+  ${media.small`
+    margin-top: 20px;
+  `};
+`;
 
 const Preamble = () => {
   const data = useStaticQuery(graphql`
@@ -258,7 +267,7 @@ const Preamble = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Section>
@@ -296,7 +305,7 @@ const Preamble = () => {
               <LeftContent>
                 <SmallContentTitle>Newham Town Hall</SmallContentTitle>
                 <SmallContentBody>Our Reception</SmallContentBody>
-                <a href="#">Further details</a>
+                <LinkStyled>Further details</LinkStyled>
               </LeftContent>
               <RightImage>
                 <Img fluid={data.newhamTownhall.childImageSharp.fluid} />
@@ -311,13 +320,13 @@ const Preamble = () => {
             <BigBoxImgContent>
               <Title>The Big Feast</Title>
               <Paragraph>Our Wedding Banquet</Paragraph>
-              <a href="#">Further details</a>
+              <LinkStyled>Further details</LinkStyled>
             </BigBoxImgContent>
           </ThemeProvider>
         </BigBox>
       </Column>
     </Section>
-  )
-}
+  );
+};
 
-export default Preamble
+export default Preamble;

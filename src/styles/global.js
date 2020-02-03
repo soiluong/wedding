@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   :root {
+    --color-true-white: #ffffff;
     --color-white: #fdf6f2;
     --color-blue: #c0d8e3;
     --color-brown: #a78d8a;
@@ -22,6 +23,9 @@ export const GlobalStyle = createGlobalStyle`
     --color-orange: #fcb954;
     --color-magenta: #964850;
     --color-beaver: #a48568;
+    --color-title: #333333;
+    --color-gray: #9b9b9b;
+    --color-dark-grey: #545454;
   }
   
   body {
@@ -48,16 +52,15 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   h2 {
-    color: var(--color-brown);
+    color: var(--color-title);
     font-size: 45px;
-    text-shadow: var(--color-blue) -2px 2px;
   }
   
   address {
     font-style: normal;
   }
   
-  p, address {
+  p, address, span {
     font-size: 20px;
   }
   

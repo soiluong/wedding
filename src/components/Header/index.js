@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components/macro"
-import landingBg from "../../static/landingBg.jpg"
-import { media } from "../styles/vars"
+
+import landingBg from "../../../static/landingBg.jpg"
+import { media } from "styles/vars"
 
 const HeaderContainer = styled.header`
   align-items: center;
@@ -16,10 +17,13 @@ const HeaderContainer = styled.header`
   p {
     color: var(--color-white);
   }
-  
+
+  ${media.medium`
+    margin-bottom: 5px;
+  `};
+
   ${media.small`
     height: 60vh;
-    margin-bottom: 5px;
   `};
 `
 
@@ -29,7 +33,7 @@ const Title = styled.span`
   margin-bottom: 30px;
   text-shadow: 0 6px 10px rgba(0, 0, 0, 0.38);
   text-transform: uppercase;
-  
+
   ${media.small`
     font-size: 16px;
   `};
@@ -54,11 +58,11 @@ const HeaderImg = styled.div`
     background: black;
     opacity: 0.3;
   }
-  
+
   ${media.medium`
     background-position: 25% 0;
   `};
-  
+
   ${media.small`
     background-position: 20% 0;
     height: 60vh;
@@ -81,7 +85,7 @@ const Date = styled.p`
     width: 50px;
     height: 50px;
   }
-  
+
   ${media.small`
     font-size: 18px;
   `};
@@ -91,7 +95,7 @@ export const Heading = styled.h1`
   ${media.small`
     font-size: 72px;
   `};
-`;
+`
 
 const Header = () => (
   <HeaderContainer>

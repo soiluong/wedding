@@ -1,16 +1,17 @@
-import React from "react"
-import Helmet from "react-helmet"
-import styled, { css } from "styled-components/macro"
+import React from 'react';
+import Helmet from 'react-helmet';
+import styled, { css } from 'styled-components/macro';
 
-import { GlobalStyle } from "../styles/global"
+import { GlobalStyle } from 'styles/global';
 
-import Header from "../components/header"
-import Preamble from "../components/preamble"
+import Header from 'components/Header';
+import Preamble from 'components/Preamble';
+import Events from 'components/Events';
 
 const Content = styled.div`
   background: var(--color-white);
   margin: 10px 10px 0;
-`
+`;
 
 const alternateSectionStyle = css`
   background: var(--color-white);
@@ -24,25 +25,25 @@ const alternateSectionStyle = css`
     font-size: 45px;
     text-shadow: var(--color-blue) -3px 2px;
   }
-`
+`;
 
 const TheBigDay = styled.section`
   ${alternateSectionStyle};
   border-top: none;
-`
+`;
 
 const Section = styled.section`
   display: flex;
-`
+`;
 
 const Menu = styled.section`
   ${alternateSectionStyle};
-`
+`;
 
 const PhotoGallery = styled.section`
   ${alternateSectionStyle};
   margin-bottom: 0;
-`
+`;
 
 const IndexPage = () => (
   <>
@@ -56,49 +57,9 @@ const IndexPage = () => (
     <main>
       <Header />
       <Preamble />
+      <Events />
 
       <Content>
-        <TheBigDay>
-          <h2>The Big Day</h2>
-          <h3>When</h3>
-          <p>Saturday 10th October 2020, 4:00pm - 10:00pm</p>
-          <h3>Where</h3>
-          <address>
-            Yi-Ban Chinese Restaurant
-            <br />
-            London Regatta Centre
-            <br />
-            1010 Dockside Road
-            <br />
-            E16 2QT London
-          </address>
-        </TheBigDay>
-
-        <Section>
-          <h2>Itinerary</h2>
-          <ul>
-            <li>
-              <p>13:30 - 14:00</p>
-              <p>Registry @ Newham Townhall</p>
-            </li>
-            <li>
-              <p>14:00 - 15:00</p>
-              <p>Photos @ Newham Townhall</p>
-            </li>
-            <li>
-              <p>16:00 - 16:30</p>
-              <p>Tea Ceremony @ Yi-Ban</p>
-            </li>
-            <li>
-              <p>17:30 - 20:00</p>
-              <p>Banquet @ Yi-Ban</p>
-            </li>
-            <li>
-              <p>20:00 - finish</p>
-              <p>Cake & music @ Yi-Ban</p>
-            </li>
-          </ul>
-        </Section>
 
         <Menu>
           <h2>Menu</h2>
@@ -176,6 +137,6 @@ const IndexPage = () => (
       </Content>
     </main>
   </>
-)
+);
 
-export default IndexPage
+export default IndexPage;
