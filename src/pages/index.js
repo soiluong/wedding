@@ -8,6 +8,8 @@ import Header from 'components/Header';
 import Preamble from 'components/Preamble';
 import Events from 'components/Events';
 import Menu from "../components/Menu"
+import TeaCeremony from "../components/TeaCeremony"
+import NearbyAttractions from "../components/NearbyAttractions"
 
 const Content = styled.div`
   background: var(--color-white);
@@ -51,16 +53,10 @@ const IndexPage = () => (
       <Preamble />
       <Events />
       <Menu />
+      <TeaCeremony />
+      <NearbyAttractions />
 
       <Content>
-
-        <Section>
-          <h2>Nearby Attractions</h2>
-          <p>
-            The O2, Emirates Airline cable cars, stratford city westfield,
-            Olympic Park, Canary Wharf
-          </p>
-        </Section>
 
         <Section>
           <h2>Getting There</h2>

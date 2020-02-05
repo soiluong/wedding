@@ -5,9 +5,10 @@ import { media } from "styles/vars"
 
 const CardContainer = styled.div`
   position: relative;
+  z-index: 0;
 `;
 
-const Content = styled.div`
+export const Content = styled.div`
   background: var(--color-true-white);
   margin-top: -30px;
   margin-left: 30px;
@@ -20,24 +21,33 @@ const Content = styled.div`
   `};
 `;
 
-const Heading = styled.h3`
+export const Heading = styled.h3`
   color: var(--color-title);
   font-family: 'Lato', sans-serif;
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   text-transform: uppercase;
 `;
 
 const Time = styled.p`
   color: var(--color-dark-grey);
   font-size: 16px;
+  
+  &:after {
+    background: var(--color-gray);
+    content: '';
+    display: block;
+    height: 1px;
+    margin: 15px 0 10px;
+    width: 50px;
+  }
 `;
 
-export default ({ children, className, image, title, time }) => {
+export default ({ children, className, image, title, time, aspectRatio }) => {
   const img = {
     ...image,
-    aspectRatio: 1.77
+    aspectRatio
   };
 
   return (

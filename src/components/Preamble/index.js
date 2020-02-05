@@ -288,7 +288,7 @@ const Preamble = () => {
               <LeftContent>
                 <SmallContentTitle>The night of the proposal</SmallContentTitle>
                 <SmallContentBody>
-                  Taken just before we got engaged
+                  At The O2
                 </SmallContentBody>
               </LeftContent>
               <RightImage>
@@ -304,8 +304,8 @@ const Preamble = () => {
             <SmallContent>
               <LeftContent>
                 <SmallContentTitle>Newham Town Hall</SmallContentTitle>
-                <SmallContentBody>Our Reception</SmallContentBody>
-                <LinkStyled>Further details</LinkStyled>
+                <SmallContentBody>Our Registry<br />(Family only)</SmallContentBody>
+                <LinkStyled>Find out more</LinkStyled>
               </LeftContent>
               <RightImage>
                 <Img fluid={data.newhamTownhall.childImageSharp.fluid} />
@@ -320,7 +320,7 @@ const Preamble = () => {
             <BigBoxImgContent>
               <Title>The Big Feast</Title>
               <Paragraph>Our Wedding Banquet</Paragraph>
-              <LinkStyled>Further details</LinkStyled>
+              <LinkStyled>Find out more</LinkStyled>
             </BigBoxImgContent>
           </ThemeProvider>
         </BigBox>

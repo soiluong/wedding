@@ -64,11 +64,11 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   p, address, span {
-    font-size: 20px;
     line-height: 1.618;
   }
   
   p {
+    font-size: 1rem;
     margin-top: 0;
   }
   

@@ -2,12 +2,24 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import Section from 'components/Section';
+import { media } from 'styles/vars';
 
-const List = styled.ul``;
+const List = styled.ul`
+  margin-bottom: 20px;
+`;
 
 const ListItem = styled.li`
   color: var(--color-dark-grey);
-  font-size: 1rem;
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  ${media.medium`
+    p {
+      font-size: 1rem;
+    }
+  `};
 `;
 
 const SectionStyled = styled(Section)`
@@ -20,47 +32,36 @@ const Disclaimer = styled.p`
   font-size: 0.9rem;
 `;
 
+const renderText = (text, index) => (
+  <ListItem key={index}>
+    <p>{text}</p>
+  </ListItem>
+);
+
 export default function Menu() {
+  const list = [
+    'Roasted suckling pig',
+    'Braised dried scallop with whole garlic',
+    'Deep fried stuffed crab claws',
+    'Special seafood soup',
+    'Lobster "Kam Sa" style',
+    'Braised whole abalone',
+    'Supreme roasted chicken',
+    'Streamed fresh turbot',
+    'Special glutinous rice',
+    'Braised "yee mein" noodles with fresh crab meat',
+    'Desserts'
+  ];
+
   return (
     <SectionStyled title="Menu">
       <List>
-        <ListItem>
-          Roasted suckling pig
-        </ListItem>
-        <ListItem>
-          Braised dried scallop with whole garlic
-        </ListItem>
-        <ListItem>
-          Deep fried stuffed crab claws
-        </ListItem>
-        <ListItem>
-          Special seafood soup
-        </ListItem>
-        <ListItem>
-          Lobster "Kam Sa" style
-        </ListItem>
-        <ListItem>
-          Braised whole abalone
-        </ListItem>
-        <ListItem>
-          Supreme roasted chicken
-        </ListItem>
-        <ListItem>
-          Streamed fresh turbot
-        </ListItem>
-        <ListItem>
-          Special glutinous rice
-        </ListItem>
-        <ListItem>
-          Braised "yee mein" noodles with fresh crab meat
-        </ListItem>
-        <ListItem>
-          Desserts
-        </ListItem>
+        {list.map(renderText)}
       </List>
       <Disclaimer>
-        * All dishes will have traces of peanut.
-        <br />* For other dietary arrangement please let us know.
+        * All dishes will have traces of peanut.<br />
+        * For other dietary arrangement please let us know.<br />
+        * Chinese banquets traditionally overrun. The desserts could arrive just after 9:30pm.
       </Disclaimer>
     </SectionStyled>
   );

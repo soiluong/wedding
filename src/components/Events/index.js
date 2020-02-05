@@ -67,7 +67,7 @@ export default function Events() {
           }
         }
       }
-      cake: file(relativePath: { eq: "cake.jpg" }) {
+      yiban: file(relativePath: { eq: "yi-ban.png" }) {
         childImageSharp {
           fluid(maxHeight: 284) {
             aspectRatio
@@ -82,9 +82,10 @@ export default function Events() {
     <SectionStyled title="Itinerary">
       <Row>
         <CardStyled
-          title="Reception"
+          title="Registry"
           time="12:15 p.m. - 1:00 p.m."
           image={data.councilRoom.childImageSharp.fluid}
+          aspectRatio={1.77}
         >
           <Address>
             Newham Town Hall
@@ -99,6 +100,7 @@ export default function Events() {
           title="Photos"
           time="1:00 p.m. - 2:00 p.m."
           image={data.photo.childImageSharp.fluid}
+          aspectRatio={1.77}
         >
           <Address>
             Newham Town Hall
@@ -114,6 +116,7 @@ export default function Events() {
           title="Tea Ceremony"
           time="4:00 p.m. - 17:00 p.m."
           image={data.tea.childImageSharp.fluid}
+          aspectRatio={1.77}
         >
           <Address>
             Yi-Ban Chinese Restaurant
@@ -127,7 +130,8 @@ export default function Events() {
         <CardStyled
           title="Banquet"
           time="17:30 p.m. - 10:00 p.m."
-          image={data.cake.childImageSharp.fluid}
+          image={data.yiban.childImageSharp.fluid}
+          aspectRatio={1.77}
         >
           <Address>
             Yi-Ban Chinese Restaurant
