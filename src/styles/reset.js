@@ -316,4 +316,13 @@ export const reset = css`
   [hidden] {
     display: none;
   }
+  
+  * {
+    font-size: 100%;
+    vertical-align: baseline;
+    overflow-wrap: break-word;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    padding: 0;
+  }
 `

@@ -7,6 +7,7 @@ import { GlobalStyle } from 'styles/global';
 import Header from 'components/Header';
 import Preamble from 'components/Preamble';
 import Events from 'components/Events';
+import Menu from "../components/Menu"
 
 const Content = styled.div`
   background: var(--color-white);
@@ -27,17 +28,8 @@ const alternateSectionStyle = css`
   }
 `;
 
-const TheBigDay = styled.section`
-  ${alternateSectionStyle};
-  border-top: none;
-`;
-
 const Section = styled.section`
   display: flex;
-`;
-
-const Menu = styled.section`
-  ${alternateSectionStyle};
 `;
 
 const PhotoGallery = styled.section`
@@ -58,51 +50,9 @@ const IndexPage = () => (
       <Header />
       <Preamble />
       <Events />
+      <Menu />
 
       <Content>
-
-        <Menu>
-          <h2>Menu</h2>
-          <ul>
-            <li>
-              <p>Roasted suckling pig</p>
-            </li>
-            <li>
-              <p>Braised dried scallop with whole garlic</p>
-            </li>
-            <li>
-              <p>Deep fried stuffed crab claws</p>
-            </li>
-            <li>
-              <p>Special seafood soup</p>
-            </li>
-            <li>
-              <p>Lobster "Kam Sa" style</p>
-            </li>
-            <li>
-              <p>Braised whole abalone</p>
-            </li>
-            <li>
-              <p>Supreme roasted chicken</p>
-            </li>
-            <li>
-              <p>Streamed fresh turbot</p>
-            </li>
-            <li>
-              <p>Special glutinous rice</p>
-            </li>
-            <li>
-              <p>Braised "yee mein" noodles with fresh crab meat</p>
-            </li>
-            <li>
-              <p>Desserts</p>
-            </li>
-          </ul>
-          <p>
-            * All dishes will have traces of peanut.
-            <br />* For other dietary arrangement please let us know.
-          </p>
-        </Menu>
 
         <Section>
           <h2>Nearby Attractions</h2>

@@ -26,10 +26,13 @@ export const GlobalStyle = createGlobalStyle`
     --color-title: #333333;
     --color-gray: #9b9b9b;
     --color-dark-grey: #545454;
+    
+    --font-title: 'Lobster', cursive;
+    --font-body: 'Lato', sans-serif;
   }
   
   body {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -39,7 +42,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   h1, h2, h3 {
-    font-family: 'Lobster', cursive;
+    font-family: var(--font-title);
     font-weight: normal;
     margin-top: 0;
   }
@@ -62,6 +65,7 @@ export const GlobalStyle = createGlobalStyle`
   
   p, address, span {
     font-size: 20px;
+    line-height: 1.618;
   }
   
   p {

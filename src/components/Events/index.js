@@ -3,17 +3,11 @@ import styled from 'styled-components/macro';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Card from 'components/Card';
+import Section from 'components/Section';
 import { media } from 'styles/vars';
 
-const Section = styled.section`
-  margin: 10px auto;
+const SectionStyled = styled(Section)`
   max-width: 1023px;
-  width: 100%;
-`;
-
-const Title = styled.h2`
-  margin-top: 70px;
-  text-align: center;
 `;
 
 const CardStyled = styled(Card)`
@@ -46,9 +40,9 @@ const Row = styled.div`
   margin-bottom: 10px;
 `;
 
-export default () => {
+export default function Events() {
   const data = useStaticQuery(graphql`
-    query {     
+    query {
       councilRoom: file(relativePath: { eq: "council-room.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 284) {
@@ -56,7 +50,7 @@ export default () => {
             ...GatsbyImageSharpFluid
           }
         }
-      },
+      }
       photo: file(relativePath: { eq: "photography.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 284) {
@@ -64,7 +58,7 @@ export default () => {
             ...GatsbyImageSharpFluid
           }
         }
-      },
+      }
       tea: file(relativePath: { eq: "chinese-tea-ceremony.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 284) {
@@ -72,7 +66,7 @@ export default () => {
             ...GatsbyImageSharpFluid
           }
         }
-      },
+      }
       cake: file(relativePath: { eq: "cake.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 284) {
@@ -85,8 +79,7 @@ export default () => {
   `);
 
   return (
-    <Section>
-      <Title>Itinerary</Title>
+    <SectionStyled title="Itinerary">
       <Row>
         <CardStyled
           title="Reception"
@@ -145,6 +138,6 @@ export default () => {
           </Address>
         </CardStyled>
       </Row>
-    </Section>
+    </SectionStyled>
   );
 };
