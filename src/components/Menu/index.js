@@ -23,7 +23,8 @@ const ListItem = styled.li`
 `;
 
 const SectionStyled = styled(Section)`
-  background: var(--color-white);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
   text-align: center;
 `;
 

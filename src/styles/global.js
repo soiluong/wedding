@@ -26,6 +26,7 @@ export const GlobalStyle = createGlobalStyle`
     --color-title: #333333;
     --color-gray: #9b9b9b;
     --color-dark-grey: #545454;
+    --color-border: #dcdcdc;
     
     --font-title: 'Lobster', cursive;
     --font-body: 'Lato', sans-serif;

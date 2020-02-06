@@ -36,7 +36,7 @@ const CardStyled = styled(Card)`
     font-size: 1rem;
     margin-bottom: 5px;
   }
-  
+
   a {
     font-size: 0.7rem;
   }
@@ -96,14 +96,13 @@ export default function NearAttractions() {
     }
   `);
 
-  return (
-    <SectionStyled title="Nearby Attractions">
-      <Content>
-        <CardStyled
-          title="The O2"
-          image={data.theo2.childImageSharp.fluid}
-          aspectRatio={1}
-        >
+  const attractions = [
+    {
+      title: 'The O2',
+      image: data.theo2.childImageSharp.fluid,
+      aspectRatio: 1,
+      content: (
+        <>
           <p>Arena hosting concerts, shopping and entertainment.</p>
           <address>
             <p>
@@ -112,18 +111,18 @@ export default function NearAttractions() {
               North Greenwich Station
             </p>
             <p>
-              <Link to="https://www.theo2.co.uk/">
-                theo2.co.uk
-              </Link>
+              <Link to="https://www.theo2.co.uk/">theo2.co.uk</Link>
             </p>
           </address>
-        </CardStyled>
-
-        <CardStyled
-          title="Olympic Park"
-          image={data.park.childImageSharp.fluid}
-          aspectRatio={1}
-        >
+        </>
+      )
+    },
+    {
+      title: 'Olympic Park',
+      image: data.park.childImageSharp.fluid,
+      aspectRatio: 1,
+      content: (
+        <>
           <p>Sporting Complex with West Ham United Stadium.</p>
           <address>
             <p>
@@ -137,13 +136,15 @@ export default function NearAttractions() {
               </Link>
             </p>
           </address>
-        </CardStyled>
-
-        <CardStyled
-          title="Canary Wharf"
-          image={data.wharf.childImageSharp.fluid}
-          aspectRatio={1}
-        >
+        </>
+      )
+    },
+    {
+      title: 'Canary Wharf',
+      image: data.wharf.childImageSharp.fluid,
+      aspectRatio: 1,
+      content: (
+        <>
           <p>Business district with shopping and restaurants.</p>
           <address>
             <p>
@@ -152,18 +153,18 @@ export default function NearAttractions() {
               Canary Wharf
             </p>
             <p>
-              <Link to="https://canarywharf.com/">
-                canarywharf.com
-              </Link>
+              <Link to="https://canarywharf.com/">canarywharf.com</Link>
             </p>
           </address>
-        </CardStyled>
-
-        <CardStyled
-          title="Emirates Airline Cable Cars"
-          image={data.emirates.childImageSharp.fluid}
-          aspectRatio={1}
-        >
+        </>
+      )
+    },
+    {
+      title: 'Emirates Air Line',
+      image: data.emirates.childImageSharp.fluid,
+      aspectRatio: 1,
+      content: (
+        <>
           <p>London's cable car across the River Thames.</p>
           <address>
             <p>
@@ -177,13 +178,15 @@ export default function NearAttractions() {
               </Link>
             </p>
           </address>
-        </CardStyled>
-
-        <CardStyled
-          title="Westfield Stratford City"
-          image={data.westfield.childImageSharp.fluid}
-          aspectRatio={1}
-        >
+        </>
+      )
+    },
+    {
+      title: 'Westfield',
+      image: data.westfield.childImageSharp.fluid,
+      aspectRatio: 1,
+      content: (
+        <>
           <p>Europe's largest shopping mall, which opened in 2011.</p>
           <address>
             <p>
@@ -197,7 +200,24 @@ export default function NearAttractions() {
               </Link>
             </p>
           </address>
-        </CardStyled>
+        </>
+      )
+    }
+  ];
+
+  return (
+    <SectionStyled title="Nearby Attractions">
+      <Content>
+        {attractions.map(({ title, image, aspectRatio, content }, index) => (
+          <CardStyled
+            title={title}
+            image={image}
+            aspectRatio={aspectRatio}
+            key={index}
+          >
+            {content}
+          </CardStyled>
+        ))}
       </Content>
     </SectionStyled>
   );
