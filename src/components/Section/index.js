@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import { media } from 'styles/vars';
+import dividerImg from '../../../static/divider-straight.png';
 
 const SectionContainer = styled.section`
   margin: 10px auto;
@@ -14,14 +15,31 @@ const SectionContainer = styled.section`
 `;
 
 const Title = styled.h2`
-  margin-bottom: 20px;
+  text-align: center;
+  
+  ${({ divider }) => !divider && `
+    margin-bottom: 20px;
+  `};
+`;
+
+const DividerContainer = styled.div`
   text-align: center;
 `;
 
-export default function Section({ children, className, title }) {
+const Divider = styled.img`
+  margin-bottom: 20px;
+  width: 200px;
+`;
+
+export default function Section({ children, className, divider, title }) {
   return (
     <SectionContainer className={className}>
-      <Title>{title}</Title>
+      <Title divider={divider}>{title}</Title>
+      {divider ? (
+        <DividerContainer>
+          <Divider src={dividerImg} />
+        </DividerContainer>
+      ) : null}
       {children}
     </SectionContainer>
   );

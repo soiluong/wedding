@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { ThemeProvider, css } from 'styled-components/macro';
 import Img from 'gatsby-image';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import { media } from 'styles/vars';
 import venueBg from '../../../static/preamble-venue.jpg';
@@ -243,7 +243,7 @@ const Column = styled.div`
   `};
 `;
 
-const LinkStyled = styled(Link)`
+const LinkStyled = styled.a`
   ${media.small`
     margin-top: 20px;
   `};
@@ -305,7 +305,7 @@ const Preamble = () => {
               <LeftContent>
                 <SmallContentTitle>Newham Town Hall</SmallContentTitle>
                 <SmallContentBody>Our Registry<br />(Family only)</SmallContentBody>
-                <LinkStyled>Find out more</LinkStyled>
+                <LinkStyled to="#events_registry">Find out more</LinkStyled>
               </LeftContent>
               <RightImage>
                 <Img fluid={data.newhamTownhall.childImageSharp.fluid} />
@@ -320,7 +320,7 @@ const Preamble = () => {
             <BigBoxImgContent>
               <Title>The Big Feast</Title>
               <Paragraph>Our Wedding Banquet</Paragraph>
-              <LinkStyled>Find out more</LinkStyled>
+              <LinkStyled to="#events_banquet">Find out more</LinkStyled>
             </BigBoxImgContent>
           </ThemeProvider>
         </BigBox>

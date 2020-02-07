@@ -12,10 +12,14 @@ const Content = styled.div`
 
 export default function PhotoGallery() {
   return (
-    <SectionStyled title="Photo Gallery">
+    <SectionStyled title="Photo Gallery" divider>
       <Content>
         <p>Please share your photos of our big day.</p>
-        <p>Put Google Drive link here</p>
+        <p>
+          <a href="https://photos.app.goo.gl/JCC5XrCVhF7k17pZ6">
+            Google Photos
+          </a>
+        </p>
       </Content>
     </SectionStyled>
   );

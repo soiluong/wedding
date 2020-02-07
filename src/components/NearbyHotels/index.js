@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { Link } from 'gatsby';
 
 import Card, { Content as CardContent, Heading } from 'components/Card';
 import Section from 'components/Section';
@@ -14,7 +13,7 @@ const SectionStyled = styled(Section)`
 const CardStyled = styled(Card)`
   flex: 0 0 300px;
   max-width: 300px;
-  margin: 10px;
+  margin: 5px;
 
   ${media.medium`
     flex: 1 1 100%;
@@ -95,9 +94,9 @@ export default function NearbyHotels() {
       content: (
         <>
           <address>Dockside Rd, Royal Docks, London E16 2FQ</address>
-          <Link to="https://www.hilton.com/en/hotels/londlhx-hampton-london-docklands/">
+          <a href="https://www.hilton.com/en/hotels/londlhx-hampton-london-docklands/">
             hilton.com
-          </Link>
+          </a>
         </>
       )
     },
@@ -108,9 +107,9 @@ export default function NearbyHotels() {
       content: (
         <>
           <address>1014 Dockside Road, London, E16 2FQ</address>
-          <Link to="https://www.marriott.com/hotels/travel/lonor-moxy-london-excel/">
+          <a href="https://www.marriott.com/hotels/travel/lonor-moxy-london-excel/">
             marriott.com
-          </Link>
+          </a>
         </>
       )
     },
@@ -121,9 +120,9 @@ export default function NearbyHotels() {
       content: (
         <>
           <address>1016 Dockside Road, London, E16 2FQ</address>
-          <Link to="https://www.travelodge.co.uk/hotels/553/London-Excel-hotel">
+          <a href="https://www.travelodge.co.uk/hotels/553/London-Excel-hotel">
             travelodge.co.uk
-          </Link>
+          </a>
         </>
       )
     },
@@ -134,9 +133,9 @@ export default function NearbyHotels() {
       content: (
         <>
           <address>1018 Dockside Road, London, E16 2QF</address>
-          <Link to="https://www.ihg.com/holidayinnexpress/hotels/gb/en/london/lonxc/hoteldetail">
+          <a href="https://www.ihg.com/holidayinnexpress/hotels/gb/en/london/lonxc/hoteldetail">
             ihg.com
-          </Link>
+          </a>
         </>
       )
     }

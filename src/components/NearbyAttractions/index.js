@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-import { Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import Card, { Content as CardContent, Heading } from 'components/Card';
 import Section from 'components/Section';
 import { media } from 'styles/vars';
-import { graphql, useStaticQuery } from 'gatsby';
 
 const SectionStyled = styled(Section)`
   background: var(--color-white);
@@ -14,7 +13,7 @@ const SectionStyled = styled(Section)`
 const CardStyled = styled(Card)`
   flex: 0 0 300px;
   max-width: 300px;
-  margin: 10px;
+  margin: 5px;
 
   ${media.medium`
     flex: 1 1 100%;
@@ -111,7 +110,7 @@ export default function NearAttractions() {
               North Greenwich Station
             </p>
             <p>
-              <Link to="https://www.theo2.co.uk/">theo2.co.uk</Link>
+              <a href="https://www.theo2.co.uk/">theo2.co.uk</a>
             </p>
           </address>
         </>
@@ -131,9 +130,9 @@ export default function NearAttractions() {
               Stratford Station
             </p>
             <p>
-              <Link to="https://www.queenelizabetholympicpark.co.uk/">
+              <a href="https://www.queenelizabetholympicpark.co.uk/">
                 queenelizabetholympicpark.co.uk
-              </Link>
+              </a>
             </p>
           </address>
         </>
@@ -153,7 +152,7 @@ export default function NearAttractions() {
               Canary Wharf
             </p>
             <p>
-              <Link to="https://canarywharf.com/">canarywharf.com</Link>
+              <a href="https://canarywharf.com/">canarywharf.com</a>
             </p>
           </address>
         </>
@@ -173,9 +172,9 @@ export default function NearAttractions() {
               Royal Victoria
             </p>
             <p>
-              <Link to="https://www.emiratesairline.co.uk/">
+              <a href="https://www.emiratesairline.co.uk/">
                 emiratesairline.co.uk
-              </Link>
+              </a>
             </p>
           </address>
         </>
@@ -195,9 +194,9 @@ export default function NearAttractions() {
               Stratford Station
             </p>
             <p>
-              <Link to="https://uk.westfield.com/stratfordcity">
+              <a href="https://uk.westfield.com/stratfordcity">
                 uk.westfield.com/stratfordcity
-              </Link>
+              </a>
             </p>
           </address>
         </>

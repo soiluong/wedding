@@ -18,6 +18,7 @@ export default function GettingThere() {
         frameBorder="0"
         style={{ border: 'none' }}
         allowFullScreen=""
+        title="Google Maps"
       />
     </SectionStyled>
   );

@@ -44,14 +44,14 @@ const Time = styled.p`
   }
 `;
 
-export default ({ children, className, image, title, time, aspectRatio }) => {
+export default ({ children, className, id, image, title, time, aspectRatio }) => {
   const img = {
     ...image,
     aspectRatio
   };
 
   return (
-    <CardContainer className={className}>
+    <CardContainer className={className} id={id}>
       <Img fluid={img} style={{ zIndex: -1 }} />
 
       <Content>

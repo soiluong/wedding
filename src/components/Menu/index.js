@@ -28,9 +28,23 @@ const SectionStyled = styled(Section)`
   text-align: center;
 `;
 
-const Disclaimer = styled.p`
+const Paragraph = styled.p`
   color: var(--color-dark-grey);
   font-size: 0.9rem;
+  position: relative;
+  
+  ${({ underlined }) => underlined && `
+    &:after {
+      content: '';
+      background: var(--color-border);
+      height: 1px;
+      width: 72px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -35px;
+    }
+  `};
 `;
 
 const renderText = (text, index) => (
@@ -55,15 +69,15 @@ export default function Menu() {
   ];
 
   return (
-    <SectionStyled title="Menu">
+    <SectionStyled title="Menu" divider>
+      <Paragraph underlined>10 Courses</Paragraph>
       <List>
         {list.map(renderText)}
       </List>
-      <Disclaimer>
-        * All dishes will have traces of peanut.<br />
-        * For other dietary arrangement please let us know.<br />
-        * Chinese banquets traditionally overrun. The desserts could arrive just after 9:30pm.
-      </Disclaimer>
+      <Paragraph>
+        * All dishes will contain traces of peanut<br />
+        * Please inform us of other dietary requirements
+      </Paragraph>
     </SectionStyled>
   );
 }

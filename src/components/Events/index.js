@@ -59,7 +59,7 @@ export default function Events() {
           }
         }
       }
-      tea: file(relativePath: { eq: "chinese-tea-ceremony.jpg" }) {
+      tea: file(relativePath: { eq: "tea-ceremony-2.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 284) {
             aspectRatio
@@ -82,6 +82,7 @@ export default function Events() {
     <SectionStyled title="Itinerary">
       <Row>
         <CardStyled
+          id="events_registry"
           title="Registry"
           time="12:15 p.m. - 1:00 p.m."
           image={data.councilRoom.childImageSharp.fluid}
@@ -128,6 +129,7 @@ export default function Events() {
         </CardStyled>
 
         <CardStyled
+          id="events_banquet"
           title="Banquet"
           time="17:30 p.m. - 10:00 p.m."
           image={data.yiban.childImageSharp.fluid}

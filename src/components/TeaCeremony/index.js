@@ -54,7 +54,7 @@ export default function TeaCeremony() {
   const Chan = [`Liv's Parents`, 'Kristina & David'];
 
   return (
-    <SectionStyled title="Tea Ceremony">
+    <SectionStyled title="Tea Ceremony" divider>
       <Container>
         <p><strong>Luong Family</strong></p>
         <List>{Luong.map(renderText)}</List>
