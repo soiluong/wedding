@@ -31,9 +31,9 @@ const Divider = styled.img`
   width: 200px;
 `;
 
-export default function Section({ children, className, divider, title }) {
+export default function Section({ children, className, divider, id, title }) {
   return (
-    <SectionContainer className={className}>
+    <SectionContainer className={className} id={id}>
       <Title divider={divider}>{title}</Title>
       {divider ? (
         <DividerContainer>

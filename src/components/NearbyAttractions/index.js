@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import Card, { Content as CardContent, Heading } from 'components/Card';
 import Section from 'components/Section';
+import { NEARBY_ATTRACTIONS } from 'constants/identifiers';
 import { media } from 'styles/vars';
 
 const SectionStyled = styled(Section)`
@@ -205,7 +206,7 @@ export default function NearAttractions() {
   ];
 
   return (
-    <SectionStyled title="Nearby Attractions">
+    <SectionStyled title="Nearby Attractions" id={NEARBY_ATTRACTIONS}>
       <Content>
         {attractions.map(({ title, image, aspectRatio, content }, index) => (
           <CardStyled

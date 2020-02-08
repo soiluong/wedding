@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import Section from 'components/Section';
+import { MENU } from "constants/identifiers"
 import { media } from 'styles/vars';
 
 const List = styled.ul`
@@ -69,7 +70,7 @@ export default function Menu() {
   ];
 
   return (
-    <SectionStyled title="Menu" divider>
+    <SectionStyled title="Menu" divider id={MENU}>
       <Paragraph underlined>10 Courses</Paragraph>
       <List>
         {list.map(renderText)}

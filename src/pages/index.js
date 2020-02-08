@@ -13,6 +13,7 @@ import GettingThere from 'components/GettingThere';
 import NearbyHotels from 'components/NearbyHotels';
 import DressCode from 'components/DressCode';
 import PhotoGallery from 'components/PhotoGallery';
+import Navigation from '../components/Navigation';
 
 const IndexPage = () => (
   <>
@@ -24,7 +25,8 @@ const IndexPage = () => (
       />
     </Helmet>
     <main>
-      <Header />
+      <Navigation />
+      <Header></Header>
       <Preamble />
       <Events />
       <Menu />

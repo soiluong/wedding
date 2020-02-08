@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import Card, { Content as CardContent, Heading } from 'components/Card';
 import Section from 'components/Section';
 import { media } from 'styles/vars';
-import { graphql, useStaticQuery } from 'gatsby';
+import { NEARBY_HOTELS } from 'constants/identifiers';
 
 const SectionStyled = styled(Section)`
   background: var(--color-white);
@@ -142,7 +143,7 @@ export default function NearbyHotels() {
   ];
 
   return (
-    <SectionStyled title="Nearby Hotels">
+    <SectionStyled title="Nearby Hotels" id={NEARBY_HOTELS}>
       <Content>
         {hotels.map(({ title, image, aspectRatio, content }, index) => (
           <CardStyled

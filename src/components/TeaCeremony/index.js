@@ -2,13 +2,14 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import Section from 'components/Section';
+import { TEA_CEREMONY } from 'constants/identifiers';
 import { media } from 'styles/vars';
 
 const List = styled.ol`
   font-size: 1.25rem;
   margin-bottom: 20px;
   margin-left: 15px;
-  
+
   ${media.small`
     font-size: 1rem;
   `};
@@ -23,12 +24,12 @@ const SectionStyled = styled(Section)``;
 const Container = styled.div`
   margin: 0 auto;
   width: 235px;
-  
+
   p {
     color: var(--color-dark-grey);
     font-size: 1.25rem;
   }
-  
+
   ${media.small`
     p {
       font-size: 1rem;
@@ -54,11 +55,15 @@ export default function TeaCeremony() {
   const Chan = [`Liv's Parents`, 'Kristina & David'];
 
   return (
-    <SectionStyled title="Tea Ceremony" divider>
+    <SectionStyled title="Tea Ceremony" divider id={TEA_CEREMONY}>
       <Container>
-        <p><strong>Luong Family</strong></p>
+        <p>
+          <strong>Luong Family</strong>
+        </p>
         <List>{Luong.map(renderText)}</List>
-        <p><strong>Chan Family</strong></p>
+        <p>
+          <strong>Chan Family</strong>
+        </p>
         <List>{Chan.map(renderText)}</List>
         <p>* TBC</p>
       </Container>

@@ -1,0 +1,11 @@
+export const PREAMBLE = 'preamble';
+export const EVENTS = 'events';
+export const EVENTS_REGISTRY = 'events_registry';
+export const EVENTS_BANQUET = 'events_banquet';
+export const MENU = 'menu';
+export const TEA_CEREMONY = 'tea_ceremony';
+export const NEARBY_ATTRACTIONS = 'nearby_attractions';
+export const GETTING_THERE = 'getting_there';
+export const NEARBY_HOTELS = 'nearby_hotels';
+export const DRESS_CODE = 'dress_code';
+export const PHOTO_GALLERY = 'photo_gallery';

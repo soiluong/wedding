@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import { media } from 'styles/vars';
+import { EVENTS_BANQUET, EVENTS_REGISTRY, PREAMBLE } from "constants/identifiers"
 import venueBg from '../../../static/preamble-venue.jpg';
 
 const smallTitleStyle = css`
@@ -270,7 +271,7 @@ const Preamble = () => {
   `);
 
   return (
-    <Section>
+    <Section id={PREAMBLE}>
       <Column left>
         <BigBox marginBottom orangeBg>
           <Content>
@@ -287,9 +288,7 @@ const Preamble = () => {
             <SmallContent>
               <LeftContent>
                 <SmallContentTitle>The night of the proposal</SmallContentTitle>
-                <SmallContentBody>
-                  At The O2
-                </SmallContentBody>
+                <SmallContentBody>At The O2</SmallContentBody>
               </LeftContent>
               <RightImage>
                 <Img fluid={data.engagement.childImageSharp.fluid} />
@@ -304,8 +303,14 @@ const Preamble = () => {
             <SmallContent>
               <LeftContent>
                 <SmallContentTitle>Newham Town Hall</SmallContentTitle>
-                <SmallContentBody>Our Registry<br />(Family only)</SmallContentBody>
-                <LinkStyled to="#events_registry">Find out more</LinkStyled>
+                <SmallContentBody>
+                  Our Registry
+                  <br />
+                  (Family only)
+                </SmallContentBody>
+                <LinkStyled href={`#${EVENTS_REGISTRY}`}>
+                  Find out more
+                </LinkStyled>
               </LeftContent>
               <RightImage>
                 <Img fluid={data.newhamTownhall.childImageSharp.fluid} />
@@ -320,7 +325,7 @@ const Preamble = () => {
             <BigBoxImgContent>
               <Title>The Big Feast</Title>
               <Paragraph>Our Wedding Banquet</Paragraph>
-              <LinkStyled to="#events_banquet">Find out more</LinkStyled>
+              <LinkStyled href={`#${EVENTS_BANQUET}`}>Find out more</LinkStyled>
             </BigBoxImgContent>
           </ThemeProvider>
         </BigBox>

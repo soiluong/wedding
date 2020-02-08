@@ -5,6 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Card from 'components/Card';
 import Section from 'components/Section';
 import { media } from 'styles/vars';
+import { EVENTS, EVENTS_BANQUET, EVENTS_REGISTRY } from "constants/identifiers"
 
 const SectionStyled = styled(Section)`
   max-width: 1023px;
@@ -79,10 +80,10 @@ export default function Events() {
   `);
 
   return (
-    <SectionStyled title="Itinerary">
+    <SectionStyled title="Itinerary" id={EVENTS}>
       <Row>
         <CardStyled
-          id="events_registry"
+          id={EVENTS_REGISTRY}
           title="Registry"
           time="12:15 p.m. - 1:00 p.m."
           image={data.councilRoom.childImageSharp.fluid}
@@ -129,7 +130,7 @@ export default function Events() {
         </CardStyled>
 
         <CardStyled
-          id="events_banquet"
+          id={EVENTS_BANQUET}
           title="Banquet"
           time="17:30 p.m. - 10:00 p.m."
           image={data.yiban.childImageSharp.fluid}
@@ -146,4 +147,4 @@ export default function Events() {
       </Row>
     </SectionStyled>
   );
-};
+}

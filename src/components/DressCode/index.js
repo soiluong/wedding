@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import Section from 'components/Section';
+import { DRESS_CODE } from 'constants/identifiers';
 import { media } from 'styles/vars';
 
 const SectionStyled = styled(Section)`
@@ -14,7 +15,7 @@ const Card = styled.div`
   flex: 0 0 767px;
   max-width: 767px;
   margin: 10px auto;
-  
+
   ${media.medium`
     margin: 5px auto;
   `};
@@ -23,15 +24,15 @@ const Card = styled.div`
 const Model = styled.div`
   flex: 0 0 378px;
   max-width: 378px;
-  
+
   &:first-child {
     margin-right: 5px;
   }
-  
+
   &:last-child {
     margin-left: 5px;
   }
-  
+
   ${media.medium`
     flex: 1 1 calc(50% - 10px);;
     
@@ -47,7 +48,7 @@ const Model = styled.div`
       margin-left: 2.5px;
     }
   `};
-  
+
   ${media.small`
     flex: 1 1 100%;
     margin: 5px 0;
@@ -111,7 +112,7 @@ export default function DressCode() {
   ];
 
   return (
-    <SectionStyled title="Dress Code" divider>
+    <SectionStyled title="Dress Code" divider id={DRESS_CODE}>
       <Content>
         <p>Colour code: Autumnal</p>
         {fashion.map(({ image }, index) => (
