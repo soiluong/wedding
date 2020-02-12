@@ -1,8 +1,8 @@
-import React from "react"
-import styled from "styled-components/macro"
+import React from 'react';
+import styled from 'styled-components/macro';
 
-import landingBg from "../../../static/landingBg.jpg"
-import { media } from "styles/vars"
+import landingBg from '../../../static/landingBg.jpg';
+import { media } from 'styles/vars';
 
 const HeaderContainer = styled.header`
   align-items: center;
@@ -12,7 +12,7 @@ const HeaderContainer = styled.header`
   justify-content: center;
   margin-bottom: 10px;
   position: relative;
-  z-index: 1;
+  z-index: 0;
 
   p {
     color: var(--color-white);
@@ -25,7 +25,7 @@ const HeaderContainer = styled.header`
   ${media.small`
     height: 60vh;
   `};
-`
+`;
 
 const Title = styled.span`
   color: var(--color-white);
@@ -37,7 +37,7 @@ const Title = styled.span`
   ${media.small`
     font-size: 16px;
   `};
-`
+`;
 
 const HeaderImg = styled.div`
   background: url(${landingBg});
@@ -51,7 +51,7 @@ const HeaderImg = styled.div`
   z-index: -1;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 100%;
@@ -67,7 +67,7 @@ const HeaderImg = styled.div`
     background-position: 20% 0;
     height: 60vh;
   `};
-`
+`;
 
 const Date = styled.p`
   align-items: center;
@@ -89,13 +89,13 @@ const Date = styled.p`
   ${media.small`
     font-size: 18px;
   `};
-`
+`;
 
 export const Heading = styled.h1`
   ${media.small`
     font-size: 72px;
   `};
-`
+`;
 
 const Header = ({ children }) => (
   <HeaderContainer>
@@ -107,6 +107,6 @@ const Header = ({ children }) => (
     <Date>10.10.2020 - London, United Kingdom</Date>
     {children}
   </HeaderContainer>
-)
+);
 
-export default Header
+export default Header;

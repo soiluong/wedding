@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
 
-import { reset } from "./reset"
+import { reset } from './reset';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -90,4 +90,4 @@ export const GlobalStyle = createGlobalStyle`
       text-decoration: underline;
     }
   }
-`
+`;

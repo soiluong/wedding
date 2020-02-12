@@ -109,9 +109,13 @@ const Date = styled.p`
   margin: 20px 0;
 
   ${({ theme: { inverted } }) => inverted && smallTitleStyle};
+  
+  ${media.large`
+    font-size: 48px;
+  `};
 
   ${media.medium`
-    font-size: 48px;
+    font-size: 42px;
     margin: 10px 0;
   `};
 

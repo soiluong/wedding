@@ -18,3 +18,14 @@ export const media = Object.keys(breakpoints).reduce(
   },
   {}
 );
+
+export const zStack = [
+  'navBackground',
+  'menuToggleBars',
+  'navList',
+  'override' // this should always be last
+];
+
+export const getZStackIndex = layer => zStack.indexOf(layer) + 1;
+
+export const zIndex = layer => `z-index: ${getZStackIndex(layer)}`;
