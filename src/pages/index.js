@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 
 import { GlobalStyle } from 'styles/global';
 
@@ -18,15 +17,9 @@ import Navigation from '../components/Navigation';
 const IndexPage = () => (
   <>
     <GlobalStyle />
-    <Helmet>
-      <link
-        href="https://fonts.googleapis.com/css?family=Lato|Lobster&display=swap"
-        rel="stylesheet"
-      />
-    </Helmet>
     <main>
       <Navigation />
-      <Header></Header>
+      <Header />
       <Preamble />
       <Events />
       <Menu />

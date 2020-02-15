@@ -230,7 +230,7 @@ export default function Navigation() {
           </ListItem>
         ))}
       </List>
-      <MenuToggle toggle={toggleOpen} />
+      <MenuToggle toggle={toggleOpen} aria-label="Navigation menu" />
     </Nav>
   );
 }

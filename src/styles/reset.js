@@ -1,4 +1,4 @@
-import { css } from "styled-components"
+import { css } from 'styled-components';
 
 export const reset = css`
   /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -174,9 +174,9 @@ export const reset = css`
    */
 
   button,
-  [type="button"],
-  [type="reset"],
-  [type="submit"] {
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
     -webkit-appearance: button;
   }
 
@@ -185,9 +185,9 @@ export const reset = css`
    */
 
   button::-moz-focus-inner,
-  [type="button"]::-moz-focus-inner,
-  [type="reset"]::-moz-focus-inner,
-  [type="submit"]::-moz-focus-inner {
+  [type='button']::-moz-focus-inner,
+  [type='reset']::-moz-focus-inner,
+  [type='submit']::-moz-focus-inner {
     border-style: none;
     padding: 0;
   }
@@ -197,9 +197,9 @@ export const reset = css`
    */
 
   button:-moz-focusring,
-  [type="button"]:-moz-focusring,
-  [type="reset"]:-moz-focusring,
-  [type="submit"]:-moz-focusring {
+  [type='button']:-moz-focusring,
+  [type='reset']:-moz-focusring,
+  [type='submit']:-moz-focusring {
     outline: 1px dotted ButtonText;
   }
 
@@ -241,8 +241,8 @@ export const reset = css`
    * 2. Remove the padding in IE 10.
    */
 
-  [type="checkbox"],
-  [type="radio"] {
+  [type='checkbox'],
+  [type='radio'] {
     box-sizing: border-box; /* 1 */
     padding: 0; /* 2 */
   }
@@ -251,8 +251,8 @@ export const reset = css`
    * Correct the cursor style of increment and decrement buttons in Chrome.
    */
 
-  [type="number"]::-webkit-inner-spin-button,
-  [type="number"]::-webkit-outer-spin-button {
+  [type='number']::-webkit-inner-spin-button,
+  [type='number']::-webkit-outer-spin-button {
     height: auto;
   }
 
@@ -261,7 +261,7 @@ export const reset = css`
    * 2. Correct the outline style in Safari.
    */
 
-  [type="search"] {
+  [type='search'] {
     -webkit-appearance: textfield; /* 1 */
     outline-offset: -2px; /* 2 */
   }
@@ -270,7 +270,7 @@ export const reset = css`
    * Remove the inner padding in Chrome and Safari on macOS.
    */
 
-  [type="search"]::-webkit-search-decoration {
+  [type='search']::-webkit-search-decoration {
     -webkit-appearance: none;
   }
 
@@ -316,7 +316,7 @@ export const reset = css`
   [hidden] {
     display: none;
   }
-  
+
   * {
     font-size: 100%;
     vertical-align: baseline;
@@ -325,4 +325,4 @@ export const reset = css`
     margin: 0;
     padding: 0;
   }
-`
+`;

@@ -48,7 +48,7 @@ const BigBox = styled.div`
   ${({ orangeBg }) =>
     orangeBg &&
     `
-    background: var(--color-coral);
+    background: var(--color-magenta);
   `};
 
   ${({ marginBottom }) =>
@@ -259,14 +259,14 @@ const Preamble = () => {
     query {
       engagement: file(relativePath: { eq: "engagement.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 700) {
+          fluid(maxWidth: 420, maxHeight: 420) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       newhamTownhall: file(relativePath: { eq: "townhall.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 700) {
+          fluid(maxWidth: 420, maxHeight: 420) {
             ...GatsbyImageSharpFluid
           }
         }

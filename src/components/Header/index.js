@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import Helmet from 'react-helmet';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import landingBg from '../../../static/landingBg.jpg';
 import { media } from 'styles/vars';
@@ -97,16 +99,41 @@ export const Heading = styled.h1`
   `};
 `;
 
-const Header = ({ children }) => (
-  <HeaderContainer>
-    <HeaderImg />
-    <Title>Save the date</Title>
-    <Heading>
-      Livvy <span>{`&`}</span> Soi
-    </Heading>
-    <Date>10.10.2020 - London, United Kingdom</Date>
-    {children}
-  </HeaderContainer>
-);
+const Header = ({ children }) => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+          }
+        }
+      }
+    `
+  );
+
+  return (
+    <HeaderContainer>
+      <Helmet
+        htmlAttributes={{ lang: 'en' }}
+        title={site.siteMetadata.title}
+        meta={[
+          {
+            name: `description`,
+            content: site.siteMetadata.description
+          }
+        ]}
+      />
+      <HeaderImg />
+      <Title>Save the date</Title>
+      <Heading>
+        Livvy <span>{`&`}</span> Soi
+      </Heading>
+      <Date>10.10.2020 - London, United Kingdom</Date>
+      {children}
+    </HeaderContainer>
+  );
+};
 
 export default Header;

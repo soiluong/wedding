@@ -37,7 +37,7 @@ export default function Section({ children, className, divider, id, title }) {
       <Title divider={divider}>{title}</Title>
       {divider ? (
         <DividerContainer>
-          <Divider src={dividerImg} />
+          <Divider src={dividerImg} alt="" />
         </DividerContainer>
       ) : null}
       {children}

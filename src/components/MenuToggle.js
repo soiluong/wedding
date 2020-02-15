@@ -9,8 +9,8 @@ const Button = styled.button`
 
   ${media.large`
     display: block;
-    left: 28px;
-    top: 30px;
+    left: 27px;
+    top: 29px;
     position: fixed; 
     ${zIndex('menuToggleBars')};
   `};
@@ -26,8 +26,8 @@ const Path = props => (
   />
 );
 
-const MenuToggle = ({ toggle }) => (
-  <Button onClick={toggle}>
+const MenuToggle = ({ toggle, ...props }) => (
+  <Button onClick={toggle} {...props}>
     <svg width="23" height="23" viewBox="0 0 23 23">
       <Path
         variants={{
