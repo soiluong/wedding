@@ -191,7 +191,9 @@ function scrollTo(href, toggleOpen) {
     toggleOpen();
 
     const element = document.querySelector(`#${href}`);
-    window.scrollTo({ top: element.offsetTop - 50, behavior: 'smooth' });
+    setTimeout(() => {
+      window.scrollTo({ top: element.offsetTop - 50, behavior: 'smooth' });
+    }, 800);
   };
 }
 
