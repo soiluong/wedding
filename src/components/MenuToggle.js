@@ -9,8 +9,8 @@ const Button = styled.button`
 
   ${media.large`
     display: block;
-    left: 27px;
-    top: 29px;
+    left: 30px;
+    top: 30px;
     position: fixed; 
     ${zIndex('menuToggleBars')};
   `};

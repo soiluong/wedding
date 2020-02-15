@@ -52,7 +52,7 @@ const Content = styled.div`
 export default function NearbyHotels() {
   const data = useStaticQuery(graphql`
     query {
-      hampton: file(relativePath: { eq: "hampton.webp" }) {
+      hampton: file(relativePath: { eq: "hampton.jpg" }) {
         childImageSharp {
           fluid {
             aspectRatio
@@ -68,7 +68,7 @@ export default function NearbyHotels() {
           }
         }
       }
-      travelodge: file(relativePath: { eq: "travelodge.webp" }) {
+      travelodge: file(relativePath: { eq: "travelodge.jpg" }) {
         childImageSharp {
           fluid {
             aspectRatio

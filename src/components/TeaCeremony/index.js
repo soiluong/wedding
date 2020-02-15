@@ -23,7 +23,7 @@ const SectionStyled = styled(Section)``;
 
 const Container = styled.div`
   margin: 0 auto;
-  width: 235px;
+  width: 160px;
 
   p {
     color: var(--color-dark-grey);

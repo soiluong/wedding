@@ -53,7 +53,7 @@ const Content = styled.div`
 export default function NearAttractions() {
   const data = useStaticQuery(graphql`
     query {
-      emirates: file(relativePath: { eq: "emirates.jpg" }) {
+      emirates: file(relativePath: { eq: "emirates-air-line.jpg" }) {
         childImageSharp {
           fluid {
             aspectRatio
@@ -145,7 +145,7 @@ export default function NearAttractions() {
       aspectRatio: 1,
       content: (
         <>
-          <p>Business district with shopping and restaurants.</p>
+          <p>Business district with shops and restaurants.</p>
           <address>
             <p>
               Jubilee Line:

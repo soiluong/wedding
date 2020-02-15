@@ -68,7 +68,7 @@ export default function Events() {
           }
         }
       }
-      yiban: file(relativePath: { eq: "yi-ban.png" }) {
+      yiban: file(relativePath: { eq: "yi-ban.jpg" }) {
         childImageSharp {
           fluid(maxHeight: 284) {
             aspectRatio
@@ -85,7 +85,7 @@ export default function Events() {
         <CardStyled
           id={EVENTS_REGISTRY}
           title="Registry"
-          time="12:15 p.m. - 1:00 p.m."
+          time="12.15pm - 1.00pm"
           image={data.councilRoom.childImageSharp.fluid}
           aspectRatio={1.77}
         >
@@ -100,7 +100,7 @@ export default function Events() {
 
         <CardStyled
           title="Photos"
-          time="1:00 p.m. - 2:00 p.m."
+          time="1.00pm - 2.00pm"
           image={data.photo.childImageSharp.fluid}
           aspectRatio={1.77}
         >
@@ -116,7 +116,7 @@ export default function Events() {
       <Row>
         <CardStyled
           title="Tea Ceremony"
-          time="4:00 p.m. - 17:00 p.m."
+          time="4.00pm - 17.00pm"
           image={data.tea.childImageSharp.fluid}
           aspectRatio={1.77}
         >
@@ -132,7 +132,7 @@ export default function Events() {
         <CardStyled
           id={EVENTS_BANQUET}
           title="Banquet"
-          time="17:30 p.m. - 10:00 p.m."
+          time="17.30pm - 10.00pm"
           image={data.yiban.childImageSharp.fluid}
           aspectRatio={1.77}
         >

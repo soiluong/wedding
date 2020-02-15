@@ -1,20 +1,30 @@
-const siteAddress = new URL("https://livvysoi.luong.co.uk");
+// const activeEnv =
+//   process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+
+require('dotenv').config({
+  path: `.env`
+});
+
+const siteAddress = new URL(
+  process.env.TARGET_ADDRESS || 'http://localhost:8000'
+);
 
 module.exports = {
   siteMetadata: {
     title: `Soi & Liv's Wedding`,
     description: `Remember the date, 10th October 2020.`,
     author: `@soiluong`,
-    siteUrl: 'https://livvysoi.luong.co.uk'
+    siteUrl: siteAddress.origin
   },
   plugins: [
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-        bucketName: siteAddress.origin,
+        bucketName: process.env.TARGET_BUCKET_NAME || 'fake-bucket',
         protocol: siteAddress.protocol.slice(0, -1),
-        hostname: siteAddress.hostname
-      },
+        hostname: siteAddress.hostname,
+        acl: null
+      }
     },
     `gatsby-plugin-react-helmet`,
     {
@@ -37,13 +47,21 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Liv & Soi's Wedding`,
+        short_name: `Liv & Soi's Wedding`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+        background_color: `#ffffff`,
+        theme_color: `#964850`,
+        display: `standalone`,
+        icon: `src/images/favicon.png` // This path is relative to the root of the site.
+      }
+    },
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: false,
+        fileName: false
       }
     },
     {
@@ -59,10 +77,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          'Lobster',
-          'Lato'
-        ],
+        fonts: ['Lobster', 'Lato'],
         display: 'swap'
       }
     },

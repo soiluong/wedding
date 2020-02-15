@@ -128,7 +128,7 @@ const Header = ({ children }) => {
       <HeaderImg />
       <Title>Save the date</Title>
       <Heading>
-        Livvy <span>{`&`}</span> Soi
+        Liv <span>{`&`}</span> Soi
       </Heading>
       <Date>10.10.2020 - London, United Kingdom</Date>
       {children}
