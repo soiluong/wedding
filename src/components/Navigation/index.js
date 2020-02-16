@@ -166,10 +166,6 @@ const navList = [
     text: 'Tea Ceremony'
   },
   {
-    href: NEARBY_ATTRACTIONS,
-    text: 'Nearby Attractions'
-  },
-  {
     href: GETTING_THERE,
     text: 'Getting There'
   },
@@ -180,6 +176,10 @@ const navList = [
   {
     href: DRESS_CODE,
     text: 'Dress Code'
+  },
+  {
+    href: NEARBY_ATTRACTIONS,
+    text: 'Nearby Attractions'
   },
   {
     href: PHOTO_GALLERY,

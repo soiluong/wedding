@@ -24,10 +24,10 @@ const IndexPage = () => (
       <Events />
       <Menu />
       <TeaCeremony />
-      <NearbyAttractions />
       <GettingThere />
       <NearbyHotels />
       <DressCode />
+      <NearbyAttractions />
       <PhotoGallery />
     </main>
   </>

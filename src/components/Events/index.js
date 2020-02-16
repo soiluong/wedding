@@ -116,7 +116,7 @@ export default function Events() {
       <Row>
         <CardStyled
           title="Tea Ceremony"
-          time="4.00pm - 17.00pm"
+          time="4.00pm - 5.00pm"
           image={data.tea.childImageSharp.fluid}
           aspectRatio={1.77}
         >
@@ -132,7 +132,7 @@ export default function Events() {
         <CardStyled
           id={EVENTS_BANQUET}
           title="Banquet"
-          time="17.30pm - 10.00pm"
+          time="5.30pm - 10.00pm"
           image={data.yiban.childImageSharp.fluid}
           aspectRatio={1.77}
         >

@@ -114,7 +114,7 @@ export default function DressCode() {
   return (
     <SectionStyled title="Dress Code" divider id={DRESS_CODE}>
       <Content>
-        <p>Colour code: Autumnal</p>
+        <p>Theme: Autumnal</p>
         {fashion.map(({ image }, index) => (
           <Card key={index}>
             <Img
