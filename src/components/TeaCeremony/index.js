@@ -19,7 +19,9 @@ const ListItem = styled.li`
   color: var(--color-dark-grey);
 `;
 
-const SectionStyled = styled(Section)``;
+const SectionStyled = styled(Section)`
+  border-bottom: 1px solid var(--color-border);
+`;
 
 const Container = styled.div`
   margin: 0 auto;

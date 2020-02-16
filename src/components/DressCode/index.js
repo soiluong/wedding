@@ -7,9 +7,7 @@ import Section from 'components/Section';
 import { DRESS_CODE } from 'constants/identifiers';
 import { media } from 'styles/vars';
 
-const SectionStyled = styled(Section)`
-  border-bottom: 1px solid var(--color-border);
-`;
+const SectionStyled = styled(Section)``;
 
 const Card = styled.div`
   flex: 0 0 767px;
