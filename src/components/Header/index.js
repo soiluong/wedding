@@ -3,7 +3,6 @@ import styled from 'styled-components/macro';
 import Helmet from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import landingBg from '../../../static/landingBg.jpg';
 import { media } from 'styles/vars';
 
 const HeaderContainer = styled.header`
@@ -42,7 +41,7 @@ const Title = styled.span`
 `;
 
 const HeaderImg = styled.div`
-  background: url(${landingBg});
+  ${({ fluid }) => fluid.src && `background: url(${fluid.src});`};
   background-size: cover;
   background-position: 50% 0;
   background-repeat: no-repeat;
@@ -100,13 +99,20 @@ export const Heading = styled.h1`
 `;
 
 const Header = ({ children }) => {
-  const { site } = useStaticQuery(
+  const { site, landingBg } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
             title
             description
+          }
+        }
+        landingBg: file(relativePath: { eq: "landingBg.jpg" }) {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
       }
@@ -125,7 +131,7 @@ const Header = ({ children }) => {
           }
         ]}
       />
-      <HeaderImg />
+      <HeaderImg fluid={landingBg.childImageSharp.fluid} />
       <Title>Save the date</Title>
       <Heading>
         Liv <span>{`&`}</span> Soi

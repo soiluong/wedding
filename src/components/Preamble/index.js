@@ -4,8 +4,11 @@ import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from 'gatsby';
 
 import { media } from 'styles/vars';
-import { EVENTS_BANQUET, EVENTS_REGISTRY, PREAMBLE } from "constants/identifiers"
-import venueBg from '../../../static/preamble-venue.jpg';
+import {
+  EVENTS_BANQUET,
+  EVENTS_REGISTRY,
+  PREAMBLE
+} from 'constants/identifiers';
 
 const smallTitleStyle = css`
   color: var(--color-gray);
@@ -73,7 +76,7 @@ const BigBox = styled.div`
 `;
 
 const BigBoxImage = styled.div`
-  background: url(${venueBg});
+  ${({ fluid }) => fluid.src && `background: url(${fluid.src});`};
   background-size: cover;
   background-position: 50% 0;
   background-repeat: no-repeat;
@@ -109,7 +112,7 @@ const Date = styled.p`
   margin: 20px 0;
 
   ${({ theme: { inverted } }) => inverted && smallTitleStyle};
-  
+
   ${media.large`
     font-size: 48px;
   `};
@@ -255,7 +258,7 @@ const LinkStyled = styled.a`
 `;
 
 const Preamble = () => {
-  const data = useStaticQuery(graphql`
+  const { engagement, newhamTownhall, banquet } = useStaticQuery(graphql`
     query {
       engagement: file(relativePath: { eq: "engagement.jpg" }) {
         childImageSharp {
@@ -267,6 +270,13 @@ const Preamble = () => {
       newhamTownhall: file(relativePath: { eq: "townhall.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 420, maxHeight: 420) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      banquet: file(relativePath: { eq: "preamble-venue.jpg" }) {
+        childImageSharp {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }
@@ -295,7 +305,7 @@ const Preamble = () => {
                 <SmallContentBody>At The O2</SmallContentBody>
               </LeftContent>
               <RightImage>
-                <Img fluid={data.engagement.childImageSharp.fluid} />
+                <Img fluid={engagement.childImageSharp.fluid} />
               </RightImage>
             </SmallContent>
           </Content>
@@ -317,14 +327,14 @@ const Preamble = () => {
                 </LinkStyled>
               </LeftContent>
               <RightImage>
-                <Img fluid={data.newhamTownhall.childImageSharp.fluid} />
+                <Img fluid={newhamTownhall.childImageSharp.fluid} />
               </RightImage>
             </SmallContent>
           </Content>
         </SmallBox>
 
         <BigBox marginTop>
-          <BigBoxImage />
+          <BigBoxImage fluid={banquet.childImageSharp.fluid} />
           <ThemeProvider theme={{ inverted: true }}>
             <BigBoxImgContent>
               <Title>The Big Feast</Title>
