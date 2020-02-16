@@ -30,6 +30,10 @@ export const GlobalStyle = createGlobalStyle`
     
     --font-title: 'Lobster', cursive;
     --font-body: 'Lato', sans-serif;
+    
+    --font-small: 0.9rem;
+    --font-medium: 1rem;
+    --font-large: 1.1rem;
   }
   
   body {

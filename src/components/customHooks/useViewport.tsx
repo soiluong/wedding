@@ -4,9 +4,9 @@ import { optimizedResizeEventListener } from 'utils/dom-helpers';
 
 let width = 0;
 let height = 0;
-const listeners = [];
+const listeners: Function[] = [];
 
-function updateViewportSize() {
+function updateViewportSize(): void {
   if (typeof document !== 'undefined') {
     width = document.documentElement.clientWidth;
     height = document.documentElement.clientHeight;
@@ -15,11 +15,11 @@ function updateViewportSize() {
   }
 }
 
-function addListener(callback) {
+function addListener(callback: Function): void {
   listeners.push(callback);
 }
 
-function removeListeners(callback) {
+function removeListeners(callback: Function): void {
   const index = listeners.indexOf(callback);
 
   if (index > -1) {
@@ -30,20 +30,27 @@ function removeListeners(callback) {
 optimizedResizeEventListener(updateViewportSize);
 updateViewportSize();
 
-export default function useViewport() {
+interface ReturnType {
+  viewportWidth: number;
+  viewportHeight: number;
+}
+export default function useViewport(): ReturnType {
   const [viewportSize, setViewport] = useState({
     viewportWidth: width,
     viewportHeight: height
   });
 
-  function onViewportResize(viewportWidth, viewportHeight) {
+  function onViewportResize(
+    viewportWidth: number,
+    viewportHeight: number
+  ): void {
     setViewport({ viewportWidth, viewportHeight });
   }
 
   useEffect(() => {
     addListener(onViewportResize);
 
-    return () => removeListeners(onViewportResize);
+    return (): void => removeListeners(onViewportResize);
   }, []);
 
   return viewportSize;

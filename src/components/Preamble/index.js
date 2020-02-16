@@ -12,7 +12,7 @@ import {
 
 const smallTitleStyle = css`
   color: var(--color-gray);
-  font-size: 14px;
+  font-size: var(--font-small);
   font-weight: bold;
   margin-bottom: 20px;
   text-transform: uppercase;

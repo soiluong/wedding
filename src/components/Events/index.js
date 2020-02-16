@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Card from 'components/Card';
 import Section from 'components/Section';
 import { media } from 'styles/vars';
-import { EVENTS, EVENTS_BANQUET, EVENTS_REGISTRY } from "constants/identifiers"
+import { EVENTS, EVENTS_BANQUET, EVENTS_REGISTRY } from 'constants/identifiers';
 
 const SectionStyled = styled(Section)`
   max-width: 1023px;

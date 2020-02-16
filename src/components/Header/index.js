@@ -98,7 +98,7 @@ export const Heading = styled.h1`
   `};
 `;
 
-const Header = ({ children }) => {
+const Header = () => {
   const { site, landingBg } = useStaticQuery(
     graphql`
       query {
@@ -137,7 +137,6 @@ const Header = ({ children }) => {
         Liv <span>{`&`}</span> Soi
       </Heading>
       <Date>10.10.2020 - London, United Kingdom</Date>
-      {children}
     </HeaderContainer>
   );
 };

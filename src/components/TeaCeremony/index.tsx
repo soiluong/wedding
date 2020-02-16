@@ -37,13 +37,13 @@ const Container = styled.div`
   `};
 `;
 
-const renderText = (text, index) => (
+const renderText = (text: string, index: number): React.ReactNode => (
   <ListItem key={index}>
     <p>{text}</p>
   </ListItem>
 );
 
-export default function TeaCeremony() {
+export default function TeaCeremony(): React.ReactNode {
   const Luong = [
     `Soi's Mum`,
     'Duc & Kim',

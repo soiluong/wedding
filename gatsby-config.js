@@ -1,6 +1,6 @@
 // const activeEnv =
 //   process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
-
+const path = require('path');
 require('dotenv').config({
   path: `.env`
 });
@@ -17,6 +17,13 @@ module.exports = {
     siteUrl: siteAddress.origin
   },
   plugins: [
+    `gatsby-plugin-typescript`,
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        root: path.join(__dirname, 'src')
+      }
+    },
     {
       resolve: `gatsby-plugin-s3`,
       options: {
@@ -44,6 +51,7 @@ module.exports = {
         }
       }
     },
+    /* eslint-disable */
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -56,6 +64,7 @@ module.exports = {
         icon: `src/images/favicon.png` // This path is relative to the root of the site.
       }
     },
+    /* eslint-enable */
     `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-styled-components`,
@@ -95,8 +104,5 @@ module.exports = {
         }
       }
     }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ]
 };
